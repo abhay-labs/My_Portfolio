@@ -44,7 +44,6 @@
             cursor: none;
         }
 
-        /* CURSOR */
         #cursor {
             position: fixed;
             width: 12px;
@@ -68,7 +67,6 @@
             transition: all 0.12s ease;
         }
 
-        /* SCROLLBAR */
         ::-webkit-scrollbar {
             width: 4px;
         }
@@ -82,7 +80,6 @@
             border-radius: 2px;
         }
 
-        /* CANVAS */
         #matrix-canvas {
             position: fixed;
             top: 0;
@@ -94,7 +91,6 @@
             pointer-events: none;
         }
 
-        /* NOISE */
         body::before {
             content: '';
             position: fixed;
@@ -105,7 +101,6 @@
             opacity: 0.4;
         }
 
-        /* ====== NAV ====== */
         nav {
             position: fixed;
             top: 0;
@@ -189,7 +184,6 @@
             box-shadow: var(--glow-red);
         }
 
-        /* HAMBURGER */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -225,7 +219,6 @@
             transform: translateY(-7px) rotate(-45deg);
         }
 
-        /* MOBILE DRAWER */
         .mobile-drawer {
             position: fixed;
             inset: 0;
@@ -286,13 +279,11 @@
             color: rgba(240, 240, 255, 0.18);
         }
 
-        /* SECTIONS */
         section {
             position: relative;
             z-index: 2;
         }
 
-        /* ====== HERO ====== */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -431,7 +422,163 @@
             transform: translateY(-2px);
         }
 
-        /* Stats desktop */
+        /* ===== RESUME BUTTON — ONLY NEW CSS ADDED ===== */
+        .btn-resume-hero {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 1rem 1.8rem;
+            cursor: none;
+            background: transparent;
+            color: #00ff88;
+            border: 1px solid rgba(0, 255, 136, 0.4);
+            clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-resume-hero:hover {
+            border-color: #00ff88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4), 0 0 60px rgba(0, 255, 136, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* ===== RESUME MODAL — ONLY NEW CSS ADDED ===== */
+        .resume-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(4, 3, 10, 0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        .resume-modal.open {
+            display: flex;
+        }
+
+        .resume-box {
+            width: min(860px, 95vw);
+            height: 90vh;
+            background: #080012;
+            border: 1px solid rgba(123, 0, 255, 0.35);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 80px rgba(123, 0, 255, 0.2), 0 0 160px rgba(255, 0, 68, 0.08);
+        }
+
+        .resume-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.85rem 1.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid var(--glass-border);
+            flex-shrink: 0;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .resume-topbar-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            background: var(--grad-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            flex: 1;
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .res-btn {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.62rem;
+            letter-spacing: 1px;
+            padding: 0.4rem 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .res-btn-dl {
+            background: var(--grad);
+            color: #fff;
+        }
+
+        .res-btn-dl:hover {
+            box-shadow: var(--glow-mix);
+        }
+
+        .res-btn-tab {
+            background: rgba(123, 0, 255, 0.2);
+            color: var(--violet-light);
+            border: 1px solid rgba(123, 0, 255, 0.3);
+        }
+
+        .res-btn-tab:hover {
+            background: rgba(123, 0, 255, 0.4);
+        }
+
+        .res-btn-close {
+            background: transparent;
+            border: 1px solid rgba(255, 0, 68, 0.35);
+            color: var(--red);
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .res-btn-close:hover {
+            background: var(--red);
+            color: #fff;
+        }
+
+        .resume-iframe {
+            flex: 1;
+            border: none;
+            width: 100%;
+            background: #fff;
+        }
+
+        .resume-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.6rem;
+            border-top: 1px solid var(--glass-border);
+            flex-shrink: 0;
+        }
+
+        .resume-footer span {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            color: rgba(240, 240, 255, 0.25);
+        }
+
         .hero-stats {
             position: absolute;
             right: 4rem;
@@ -473,7 +620,6 @@
             margin: 0 auto;
         }
 
-        /* Stats mobile */
         .hero-stats-mobile {
             display: none;
             gap: 1.5rem;
@@ -505,7 +651,6 @@
             margin-top: 0.2rem;
         }
 
-        /* BADGES */
         .badge {
             position: absolute;
             font-family: 'Share Tech Mono', monospace;
@@ -550,7 +695,6 @@
             }
         }
 
-        /* SCROLL IND */
         .scroll-ind {
             position: absolute;
             bottom: 2rem;
@@ -586,7 +730,6 @@
             }
         }
 
-        /* ====== SECTION SHARED ====== */
         .section-wrapper {
             padding: 8rem 4rem;
         }
@@ -636,7 +779,6 @@
             clip-path: polygon(4px 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
         }
 
-        /* GLASS CARD */
         .glass-card {
             background: var(--glass);
             border: 1px solid var(--glass-border);
@@ -665,7 +807,6 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), var(--glow-mix);
         }
 
-        /* ====== ABOUT ====== */
         #about {
             background: linear-gradient(180deg, var(--black) 0%, #070014 100%);
         }
@@ -819,7 +960,6 @@
             font-weight: 600;
         }
 
-        /* ====== SKILLS ====== */
         #skills {
             background: #070014;
         }
@@ -953,7 +1093,6 @@
             box-shadow: var(--glow-violet);
         }
 
-        /* ====== PROJECTS ====== */
         #projects {
             background: linear-gradient(180deg, #070014, var(--black));
         }
@@ -1086,7 +1225,6 @@
             border-color: var(--violet-light);
         }
 
-        /* ====== EXPERIENCE ====== */
         #experience {
             background: var(--black);
         }
@@ -1204,7 +1342,6 @@
             letter-spacing: 1px;
         }
 
-        /* ====== TESTIMONIALS ====== */
         #testimonials {
             background: linear-gradient(180deg, var(--black), #070014);
         }
@@ -1273,7 +1410,6 @@
             margin-top: 0.2rem;
         }
 
-        /* ====== CONTACT ====== */
         #contact {
             background: #070014;
         }
@@ -1400,7 +1536,6 @@
             transform: translateY(-2px);
         }
 
-        /* ====== FOOTER ====== */
         footer {
             padding: 3rem 4rem;
             border-top: 1px solid var(--glass-border);
@@ -1458,7 +1593,6 @@
             }
         }
 
-        /* ANIMATIONS */
         @keyframes fadeSlideDown {
             from {
                 opacity: 0;
@@ -1495,7 +1629,6 @@
             }
         }
 
-        /* REVEAL */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -1529,7 +1662,6 @@
             transform: translateX(0);
         }
 
-        /* SCANLINE */
         .scanline {
             position: absolute;
             top: 0;
@@ -1557,7 +1689,6 @@
             }
         }
 
-        /* GLITCH */
         .glitch {
             position: relative;
         }
@@ -1619,9 +1750,6 @@
             }
         }
 
-        /* ================================================
-           TABLET  ≤ 1024px
-        ================================================ */
         @media(max-width:1024px) {
             nav {
                 padding: 1rem 2rem;
@@ -1656,9 +1784,6 @@
             }
         }
 
-        /* ================================================
-           MOBILE  ≤ 768px
-        ================================================ */
         @media(max-width:768px) {
             body {
                 cursor: auto;
@@ -1669,7 +1794,6 @@
                 display: none;
             }
 
-            /* Nav */
             nav {
                 padding: 0.85rem 1.1rem;
             }
@@ -1688,7 +1812,6 @@
                 display: flex;
             }
 
-            /* Hero */
             #hero {
                 min-height: 100svh;
                 padding: 0 1.1rem;
@@ -1745,13 +1868,15 @@
             }
 
             .btn-primary,
-            .btn-secondary {
+            .btn-secondary,
+            .btn-resume-hero {
                 text-align: center;
                 padding: 0.85rem 1rem;
                 font-size: 0.67rem;
                 letter-spacing: 2px;
                 clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
                 cursor: auto;
+                justify-content: center;
             }
 
             .hero-stats {
@@ -1762,7 +1887,6 @@
                 display: flex;
             }
 
-            /* Section */
             .section-wrapper {
                 padding: 3.8rem 1.1rem;
             }
@@ -1780,7 +1904,6 @@
                 letter-spacing: 3px;
             }
 
-            /* About */
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 1.8rem;
@@ -1841,7 +1964,6 @@
                 font-size: 0.88rem;
             }
 
-            /* Skills */
             .skills-grid {
                 grid-template-columns: 1fr;
                 gap: 0.9rem;
@@ -1878,7 +2000,6 @@
                 padding: 0.26rem 0.52rem;
             }
 
-            /* Projects */
             .projects-grid {
                 grid-template-columns: 1fr;
                 gap: 0.9rem;
@@ -1905,7 +2026,6 @@
                 font-size: 0.65rem;
             }
 
-            /* Experience */
             .timeline {
                 padding-left: 1.7rem;
             }
@@ -1956,7 +2076,6 @@
                 margin-bottom: 2.2rem;
             }
 
-            /* Testimonials */
             .testimonials-grid {
                 grid-template-columns: 1fr;
                 gap: 0.9rem;
@@ -1983,7 +2102,6 @@
                 font-size: 0.6rem;
             }
 
-            /* Contact */
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -2021,7 +2139,6 @@
                 font-size: 0.95rem;
             }
 
-            /* Footer */
             footer {
                 flex-direction: column;
                 gap: 0.6rem;
@@ -2037,15 +2154,29 @@
                 font-size: 0.58rem;
             }
 
-            /* Kill parallax */
             #hero {
                 transform: none !important;
             }
+
+            /* Resume modal mobile */
+            .resume-box {
+                height: 85vh;
+            }
+
+            .resume-topbar {
+                flex-wrap: wrap;
+            }
+
+            .resume-topbar-title {
+                font-size: 0.62rem;
+            }
+
+            .res-btn {
+                font-size: 0.58rem;
+                padding: 0.32rem 0.6rem;
+            }
         }
 
-        /* ================================================
-           SMALL PHONES  ≤ 375px
-        ================================================ */
         @media(max-width:375px) {
             .hero-name {
                 font-size: clamp(2.1rem, 10.5vw, 2.6rem);
@@ -2088,6 +2219,25 @@
     <div id="cursor"></div>
     <div id="cursor-trail"></div>
     <canvas id="matrix-canvas"></canvas>
+
+    <!-- RESUME MODAL — added -->
+    <div class="resume-modal" id="resume-modal" onclick="if(event.target===this)closeResume()">
+        <div class="resume-box">
+            <div class="resume-topbar">
+                <div class="resume-topbar-title">📄 ABHAY JAISWAL — RESUME</div>
+                <div class="resume-actions">
+                    <a href="Abhay_Jaiswal__Resume.pdf" download class="res-btn res-btn-dl">⬇ Download</a>
+                    <a href="Abhay_Jaiswal__Resume.pdf" target="_blank" class="res-btn res-btn-tab">↗ New Tab</a>
+                    <button class="res-btn res-btn-close" onclick="closeResume()">✕</button>
+                </div>
+            </div>
+            <iframe class="resume-iframe" id="resume-iframe" src="" title="Resume"></iframe>
+            <div class="resume-footer">
+                <span>// ABHAY_JAISWAL_RESUME.PDF</span>
+                <span>// AKTU LUCKNOW · CGPA 8.1 · GRAD 2026</span>
+            </div>
+        </div>
+    </div>
 
     <!-- MOBILE DRAWER -->
     <div class="mobile-drawer" id="mobile-drawer">
@@ -2137,6 +2287,8 @@
         <div class="hero-btns">
             <a href="#projects" class="btn-primary">View My Work</a>
             <a href="#contact" class="btn-secondary">Let's Talk</a>
+            <!-- Resume button — only addition -->
+            <button class="btn-resume-hero" onclick="openResume()">📄 Resume</button>
         </div>
 
         <!-- Mobile stats -->
@@ -2626,10 +2778,9 @@
             </div>
             <div class="contact-grid">
                 <div class="reveal-left">
-                    <p style="font-size:1.05rem;line-height:1.9;color:rgba(240,240,255,0.55);margin-bottom:3rem;">
-                        Have a project in mind? Looking for a dev to join your team? Or just want to talk tech? My inbox
-                        is always open.
-                    </p>
+                    <p style="font-size:1.05rem;line-height:1.9;color:rgba(240,240,255,0.55);margin-bottom:3rem;">Have a
+                        project in mind? Looking for a dev to join your team? Or just want to talk tech? My inbox is
+                        always open.</p>
                     <div class="contact-info-block"><label>Email</label><a
                             href="mailto:smart.abhayjaiswal2003@gmail.com">smart.abhayjaiswal2003@gmail.com</a></div>
                     <div class="contact-info-block"><label>Phone / WhatsApp</label><span>+91 9336870236</span></div>
@@ -2670,6 +2821,18 @@
     <script>
         const isMobile = () => window.innerWidth <= 768;
 
+        /* RESUME MODAL — only addition */
+        function openResume() {
+            document.getElementById('resume-iframe').src = 'Abhay_Jaiswal__Resume.pdf';
+            document.getElementById('resume-modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeResume() {
+            document.getElementById('resume-modal').classList.remove('open');
+            document.body.style.overflow = '';
+            setTimeout(() => { document.getElementById('resume-iframe').src = ''; }, 300);
+        }
+
         /* DRAWER */
         function toggleDrawer() {
             const d = document.getElementById('mobile-drawer');
@@ -2683,7 +2846,7 @@
             document.getElementById('hamburger').classList.remove('open');
             document.body.style.overflow = '';
         }
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeResume(); } });
 
         /* CURSOR */
         const cursor = document.getElementById('cursor');
